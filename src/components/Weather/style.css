@@ -1,0 +1,16 @@
+.weather {
+    max-width: 8rem;
+    padding: 20px 40px;
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.weather img {
+    width: 100%;
+}
+
+.weather .degree {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
