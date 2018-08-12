@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './style.css';
 
-import Weather from '../Weather';
+import Weather from '../../components/Weather';
 
 import axios from 'axios';
 
