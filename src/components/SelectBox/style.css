@@ -1,0 +1,11 @@
+.select-box {
+    display: flex;
+    justify-content: center;
+}
+
+.select-box select {
+    width: auto;
+    padding: 10px 20px;
+    border: 1px solid var(--main-border-color);
+    background: transparent;
+}
