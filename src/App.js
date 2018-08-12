@@ -9,9 +9,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
         </header>
-        <p className="App-intro">
-          <WeatherComponent />
-        </p>
+        <WeatherComponent />
       </div>
     );
   }

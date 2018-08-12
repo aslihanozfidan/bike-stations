@@ -61,8 +61,13 @@ class WeatherContainer extends Component {
     }
 
     render() {
+        let text = this.state.weather === 'Sunny' || this.state.weather === 'Clouds' ?
+            "You should go out and ride a bike!" :
+            "The weather's not good! :(";
+
         return (
-            <div className="container">
+            <div className="container weather-area">
+                <h3 className="center-text">{text}</h3>
                 <Weather weatherStatus={this.state.weather} weatherDegree={this.state.degree} />
             </div>
         );

@@ -1,6 +1,4 @@
-.weather-container {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-  }
+.weather-area {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--main-border-color);
+}
