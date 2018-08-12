@@ -7,9 +7,7 @@ import CityContainer from './containers/CityContainer';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-        </header>
+      <div className="app">
         <WeatherComponent />        
         <CityContainer />
       </div>

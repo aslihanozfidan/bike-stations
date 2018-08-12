@@ -9,3 +9,9 @@
     border: 1px solid var(--main-border-color);
     background: transparent;
 }
+
+@media (max-width: 768px) {
+    .select-box select {
+        width: 100%;
+    }
+}

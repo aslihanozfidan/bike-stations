@@ -16,6 +16,10 @@ body {
   background-color: var(--main-bg-color);
 }
 
+.app {
+  padding: 0 10px;
+}
+
 .container {
   position: relative;
   width: 100%;
