@@ -1,0 +1,37 @@
+.progress-bar ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.progress-bar ul li {
+    width: auto;
+    width: 250px;
+    padding: 10px 20px;
+    margin: 10px;
+    list-style-type: none;
+    background: transparent;
+}
+
+.progress-bar ul h3 {
+    text-align: center;
+}
+
+.progress-bar ul h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    border-radius: 50%;
+    border: 4px solid var(--main-bar-color);
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .progress-bar ul li {
+        width: 100%;
+    }
+}
