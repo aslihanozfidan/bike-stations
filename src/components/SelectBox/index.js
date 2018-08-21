@@ -1,14 +1,20 @@
-import React from 'react';
-import './style.css';
+import React, { Component } from "react";
+import "./style.css";
 
-const SelectBox = props => {
+class SelectBox extends Component {
+  handleCitySelection = (e) => {
+    let city = e.target.value;
+    this.props.onHandleCitySelection(city);
+    console.log(city);
+  }
+
+  render() {
     return (
-        <div className="select-box">
-            <select>
-                {props.options}
-            </select>
-        </div>
+      <div className="select-box">
+        <select onChange={this.handleCitySelection}>{this.props.options}</select>
+      </div>
     );
+  }
 }
 
 export default SelectBox;
