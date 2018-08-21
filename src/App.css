@@ -4,6 +4,7 @@
   --main-bg-color: #ffffff; 
   --main-font-color: #444444;
   --main-border-color: #cccccc;
+  --main-bar-color: #95DEE4;
 }
 
 body {
@@ -28,4 +29,8 @@ body {
 
 .center-text {
   text-align: center;
+}
+
+.space-area-top {
+  margin-top: 50px;
 }
