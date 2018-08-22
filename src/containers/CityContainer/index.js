@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 
 import SelectBox from "../../components/SelectBox";
+import Store from "../../store/store";
 
 import axios from "axios";
 
@@ -11,7 +12,7 @@ class CityContainer extends Component {
 
     this.state = {
       cities: [],
-      selectedCity: ""
+      selectedCityId: ""
     };
   }
 
@@ -35,19 +36,27 @@ class CityContainer extends Component {
       });
   };
 
-  handleCity = selectedCity => {
-    this.setState({ selectedCity: selectedCity });
+  handleCity = selectedCityId => {
+    this.setState({ selectedCityId: selectedCityId });
+    Store.selectedCityId = selectedCityId;
+    console.log(Store);
   };
 
   componentDidMount() {
     this.getCities();
   }
 
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if(prevState.selectedCityId !== Store.selectedCityId) {
+      console.log(Store.selectedCityId + ' did update')
+    }
+  }
+
   render() {
     let options = [];
     this.state.cities.forEach((element, index) => {
       options.push(
-        <option key={index} value={element.name}>
+        <option key={index} value={element.id}>
           {element.name}
         </option>
       );

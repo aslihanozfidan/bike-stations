@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 
 import ProgressBar from "../../components/ProgressBar";
+import Store from "../../store/store";
 
 import axios from "axios";
 
@@ -15,8 +16,9 @@ class ProgressBarContainer extends Component {
   }
 
   getStations = () => {
+    console.log(Store.selectedCityId + ' progressbar');
     axios
-      .get(`https://api.citybik.es//v2/networks/melbourne-bike-share`)
+      .get(`https://api.citybik.es//v2/networks/${Store.selectedCityId}`)
       .then(res => {
         let allStations = [];
 
@@ -39,8 +41,8 @@ class ProgressBarContainer extends Component {
       });
   };
 
-  handleCity = selectedCity => {
-    this.setState({ selectedCity: selectedCity });
+  handleCity = selectedCityId => {
+    this.setState({ selectedCityId: selectedCityId });
   };
 
   componentDidMount() {
@@ -64,6 +66,7 @@ class ProgressBarContainer extends Component {
       <div className="container space-area-top">
         <h3 className="center-text">{title}</h3>
         <ProgressBar options={options} />
+        {Store.selectedCityId}
       </div>
     );
   }
