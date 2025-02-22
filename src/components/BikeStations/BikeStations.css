@@ -1,0 +1,79 @@
+.bike-stations {
+  width: 100%;
+}
+
+.bike-stations__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 30px;
+  margin-bottom: 20px;
+}
+
+.bike-stations__location {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.bike-stations__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.station-card {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.station-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 20px;color: #666;
+  padding: 0 0 12px 0;
+}
+
+.station-card__header > a {
+  color: #333;
+}
+
+.station-card__name {
+  margin: 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.station-card__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.stat__label {
+  color: #666;
+}
+
+.stat__value {
+  font-weight: 600;
+  color: #333;
+}
+
+.station-skeleton {
+  margin-bottom: 10px;
+}
+
+.error-message {
+  color: #dc2626;
+  text-align: center;
+  padding: 20px;
+}

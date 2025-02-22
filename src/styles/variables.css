@@ -1,0 +1,12 @@
+:root {
+  --gradient-cloudy: linear-gradient(to right, #60a5fa, #3b82f6);
+  --gradient-storm: linear-gradient(to right, #9ca3af, #6b7280);
+  --gradient-overcast: linear-gradient(to right, #93c5fd, #60a5fa);
+  --gradient-sunny: linear-gradient(to right, #22d3ee, #2dd4bf);
+  --gradient-rain: linear-gradient(to right, #2563eb, #1d4ed8);
+  --gradient-lightning: linear-gradient(to right, #a855f7, #9333ea);
+
+  --card-padding: 1.5rem;
+  --border-radius: 1rem;
+  --transition-speed: 0.3s;
+}

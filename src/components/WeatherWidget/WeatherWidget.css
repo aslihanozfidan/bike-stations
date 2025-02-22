@@ -1,0 +1,118 @@
+
+.weather {
+  min-height: 100vh;
+  padding: 1.5rem;
+  background: linear-gradient(to bottom right, #f0f7ff, #e0f2fe);
+}
+
+.weather__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.weather__title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1e3a8a;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.weather__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.weather-card {
+  position: relative;
+  padding: var(--card-padding);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background: #ddd;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.weather-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.weather-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+}
+
+.weather-card__content {
+  position: relative;
+  z-index: 1;
+}
+
+.weather-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.weather-card__temperature {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1;
+  color: #fff;
+}
+
+.weather-card__icon {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.weather-card__condition {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.weather-card__meta {
+  font-size: 0.875rem;
+  opacity: 0.8;
+  color: #fff;
+}
+
+/* Variants */
+.weather-card--clouds {
+  background: var(--gradient-cloudy);
+}
+.weather-card--storm {
+  background: var(--gradient-storm);
+}
+.weather-card--overcast {
+  background: var(--gradient-overcast);
+}
+.weather-card--sunny {
+  background: var(--gradient-sunny);
+}
+
+.weather-card--clear {
+  background: var(--gradient-sunny);
+}
+.weather-card--rain {
+  background: var(--gradient-rain);
+}
+.weather-card--lightning {
+  background: var(--gradient-lightning);
+}
+
+@media (min-width: 768px) {
+  .weather {
+    padding: 3rem;
+  }
+}

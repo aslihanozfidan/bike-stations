@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "3000:80"
+    environment:
+      - VITE_WEATHER_API_KEY=${VITE_WEATHER_API_KEY}
+      - VITE_IP_STACK_API_KEY=${VITE_IP_STACK_API_KEY}
+      - VITE_BIKE_API_URL=${VITE_BIKE_API_URL} 
