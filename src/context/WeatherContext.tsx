@@ -17,7 +17,7 @@ export function WeatherProvider({ children }: { children: React.ReactNode }) {
       const response = await getWeather({ city });
 
       setWeatherData({
-        temperature: response.main.temp,
+        temperature: parseInt(response.main.temp),
         description: response.weather[0].description,
         humidity: response.main.humidity,
         windSpeed: response.wind.speed,

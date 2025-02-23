@@ -57,7 +57,7 @@
 .weather-card__header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 1.5rem;
   color: #fff;
 }
@@ -70,7 +70,6 @@
 }
 
 .weather-card__icon {
-  font-size: 3rem;
   color: #fff;
 }
 

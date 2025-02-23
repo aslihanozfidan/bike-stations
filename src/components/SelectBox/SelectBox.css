@@ -1,4 +1,6 @@
 .select {
+  width: 100%;
+  max-width: 250px;
   padding: 8px 28px 8px 12px;
   border: 1px solid #e2e8f0;
   border-radius: 6px;
@@ -22,4 +24,10 @@
 .select:disabled {
   background-color: #f7fafc;
   cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .select {
+    max-width: 100%;
+  }
 }

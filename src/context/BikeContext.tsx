@@ -4,8 +4,7 @@ import {
   getCities,
   getStationsByCityId,
 } from "../services/bikeService.js";
-import { getCity } from "../services/locationService.js";
-import { getIp } from "../services/ipService.js";
+import { getCityName } from "../services/locationService.js";
 
 const BikeContext = createContext<BikeContextType | undefined>(undefined);
 
@@ -26,8 +25,7 @@ export function BikeProvider({ children }: { children: React.ReactNode }) {
 
   const initializeCity = async (citiesMap: GroupedCities) => {
     try {
-      const ip = await getIp();
-      const cityName = await getCity({ ip });
+      const cityName = await getCityName();
       const foundCity = findCityByName(cityName, citiesMap);
       
       const firstCountryCities = Object.values(citiesMap)[0] || [];

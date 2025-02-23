@@ -33,7 +33,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  column-gap: 20px;color: #666;
+  column-gap: 20px;
+  color: #666;
   padding: 0 0 12px 0;
 }
 
@@ -76,4 +77,10 @@
   color: #dc2626;
   text-align: center;
   padding: 20px;
+}
+
+@media (max-width: 600px) {
+  .bike-stations__header {
+    flex-direction: column-reverse;
+  }
 }

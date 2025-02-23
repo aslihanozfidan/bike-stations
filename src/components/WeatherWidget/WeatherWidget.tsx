@@ -72,7 +72,7 @@ export const WeatherWidget = () => {
             </div>
             <Icon
               className="weather-card__icon"
-              size={48}
+              size={90}
               strokeWidth={1.5}
             />
           </header>

@@ -1,21 +1,51 @@
 import axios from "axios";
 
-interface GetLocationProps {
-  ip: string;
-}
+export const getLocation = (): Promise<{
+  latitude: number | null;
+  longitude: number | null;
+}> => {
+  return new Promise((resolve, reject) => {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          resolve({
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+          });
+        },
+        (error) => {
+          console.error("Geolocation error:", error);
+          reject({
+            latitude: null,
+            longitude: null,
+          });
+        }
+      );
+    } else {
+      console.warn("Geolocation warn: the browser does not support.");
+      reject({
+        latitude: null,
+        longitude: null,
+      });
+    }
+  });
+};
 
-export const getCity = ({ ip }: GetLocationProps): Promise<string> => {
-  return axios
+export const getCityName = async (): Promise<string> => {
+  const { latitude, longitude } = await getLocation();
+  return await axios
     .get(
-      `http://api.ipstack.com/${ip}?access_key=${
-        import.meta.env.VITE_IP_STACK_API_KEY
-      }`
+      ` https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`,
+      {
+        headers: {
+          "User-Agent": "bike-stations-app",
+        },
+      }
     )
     .then((res) => {
-      return res.data?.city;
+      return res.data?.address.province;
     })
     .catch((err) => {
-      console.error("Error fetching location:", err);
-      return "Istanbul";
+      console.error("Error fetching ip:", err);
     });
 };
