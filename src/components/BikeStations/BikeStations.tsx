@@ -1,13 +1,15 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
+import Skeleton from "react-loading-skeleton";
 import { MapPin as MapPinIcon } from "lucide-react";
 import { useBike } from "../../context/BikeContext.js";
 import SelectBox from "../SelectBox/SelectBox.js";
-import Skeleton from "react-loading-skeleton";
+import { City } from "../../types/bike.js";
 import "react-loading-skeleton/dist/skeleton.css";
 import "./BikeStations.css";
-import { City } from "../../types/bike.js";
 
 export const BikeStations = () => {
+  const { t } = useTranslation();
   const { stations, cities, loading, error, selectedCity, setSelectedCity } =
     useBike();
 
@@ -17,13 +19,16 @@ export const BikeStations = () => {
     if (city) setSelectedCity(city);
   };
 
-  const cityOptions = Object.entries(cities).reduce((acc, [country, citiesList]) => {
-    acc[country] = citiesList.map(city => ({
-      value: city.id,
-      label: city.location.city
-    }));
-    return acc;
-  }, {} as { [key: string]: Array<{ value: string; label: string }> });
+  const cityOptions = Object.entries(cities).reduce(
+    (acc, [country, citiesList]) => {
+      acc[country] = citiesList.map((city) => ({
+        value: city.id,
+        label: city.location.city,
+      }));
+      return acc;
+    },
+    {} as { [key: string]: Array<{ value: string; label: string }> }
+  );
 
   if (loading) {
     return (
@@ -40,7 +45,7 @@ export const BikeStations = () => {
   return (
     <div className="bike-stations">
       <div className="bike-stations__header">
-        <h2>Bike Stations</h2>
+        <h2>{t("BIKE_STATIONS")}</h2>
         <SelectBox
           value={selectedCity?.id || ""}
           options={cityOptions}
@@ -67,16 +72,16 @@ export const BikeStations = () => {
             </div>
             <div className="station-card__stats">
               <div className="stat">
-                <span className="stat__label">Available Bikes:</span>
+                <span className="stat__label">{t("AVAILABLE_BIKES")}</span>
                 <span className="stat__value">{station.free_bikes}</span>
               </div>
               <div className="stat">
-                <span className="stat__label">Empty Slots:</span>
+                <span className="stat__label">{t("EMPTY_SLOTS")}</span>
                 <span className="stat__value">{station.empty_slots}</span>
               </div>
               {station.distance && (
                 <div className="stat">
-                  <span className="stat__label">Distance:</span>
+                  <span className="stat__label">{t("DISTANCE")}</span>
                   <span className="stat__value">
                     {(station.distance / 1000).toFixed(2)} km
                   </span>

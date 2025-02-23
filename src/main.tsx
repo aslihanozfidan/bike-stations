@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { WeatherWidget } from "./components/WeatherWidget/WeatherWidget.js";
 import { BikeStations } from "./components/BikeStations/BikeStations.js";
+import { LanguageSelector } from "./components/LanguageSelector/LanguageSelector.js";
 import { useBike } from "./context/BikeContext.js";
 import { useWeather } from "./context/WeatherContext.js";
 
@@ -17,6 +18,7 @@ const Main = () => {
   return (
     <div className="app">
       <div className="app__container">
+        <LanguageSelector />
         <WeatherWidget />
         <BikeStations />
       </div>
@@ -24,4 +26,4 @@ const Main = () => {
   );
 };
 
-export default Main; 
+export default Main;

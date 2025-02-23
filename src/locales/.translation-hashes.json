@@ -1,0 +1,30 @@
+{
+  "BIKE_STATIONS": {
+    "de": "fd19dd173879f749813d16be73b99851",
+    "tr": "fd19dd173879f749813d16be73b99851",
+    "es": "fd19dd173879f749813d16be73b99851",
+    "fr": "fd19dd173879f749813d16be73b99851",
+    "it": "fd19dd173879f749813d16be73b99851"
+  },
+  "AVAILABLE_BIKES": {
+    "de": "90eaa336bc5f27ad8bc7d133030cbd05",
+    "tr": "90eaa336bc5f27ad8bc7d133030cbd05",
+    "es": "90eaa336bc5f27ad8bc7d133030cbd05",
+    "fr": "90eaa336bc5f27ad8bc7d133030cbd05",
+    "it": "90eaa336bc5f27ad8bc7d133030cbd05"
+  },
+  "EMPTY_SLOTS": {
+    "de": "1766552887c661d44bddedaa4d80ff60",
+    "tr": "1766552887c661d44bddedaa4d80ff60",
+    "es": "1766552887c661d44bddedaa4d80ff60",
+    "fr": "1766552887c661d44bddedaa4d80ff60",
+    "it": "1766552887c661d44bddedaa4d80ff60"
+  },
+  "DISTANCE": {
+    "de": "d7ecc20be02635c8fd9ba717df02a66b",
+    "tr": "d7ecc20be02635c8fd9ba717df02a66b",
+    "es": "d7ecc20be02635c8fd9ba717df02a66b",
+    "fr": "d7ecc20be02635c8fd9ba717df02a66b",
+    "it": "d7ecc20be02635c8fd9ba717df02a66b"
+  }
+}
